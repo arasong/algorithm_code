@@ -1,3 +1,5 @@
+
+```java
 import java.io.;
 import java.util.Stack;
 
@@ -35,3 +37,4 @@ public class Main {
         else System.out.println(ret);  가능한 경우
     }
 }
+```
