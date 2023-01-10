@@ -265,7 +265,45 @@ public class stack {
 ```
 
 #### 예제 1
-<img src="\assets\img\posts\algorithm\res1.png" style="width: 40%"/>
+```
+[INPUT]
+8   
+4
+3
+6
+8
+7
+5
+2
+1
+[OUTPUT]
++
++
++
++
+-
+-
++
++
+-
++
++
+-
+-
+-
+-
+-
+```
 
 #### 예제 2
-<img src="\assets\img\posts\algorithm\res2.png" style="width: 40%"/>
+```
+[INPUT]
+5
+1
+2
+5
+3
+4
+[OUTPUT]
+NO
+```
