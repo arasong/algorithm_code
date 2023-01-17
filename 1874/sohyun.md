@@ -1,3 +1,9 @@
+### 문제
+스택 수열 :
+https://www.acmicpc.net/problem/1874
+
+### 소스
+```javascript
 // 입력받기 위해 사용 -> 자바스크립트 file system
 const fs = require('fs');
 const readFileSyncAddress = 'dev/stdin';
@@ -38,3 +44,5 @@ for (let i=0; i< inputLength ; i++) {
 }
 
 console.log(result.join('\n'));
+```
+
