@@ -1,0 +1,67 @@
+## 풀이
+커서를 기준으로 좌측 입력과 우측 입력을 제어할 스택 left, right를 생성.   
+**커서 이동 시 right으로 값을 이동 시 마지막 입력된 값이 가장 처음으로 입력되므로**   
+**right의 경우 반드시 선입선출 형태로 출력해야함에 주의한다.**
+
+#### 소스
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Matter5397 {
+    public static void main(String[] args) throws IOException {
+        // 사용자 입력
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int cnt = Integer.parseInt(br.readLine());
+        String[] cases = new String[cnt];
+
+        for(int k=0; k<cnt; k++) {
+            cases[k] = br.readLine();
+        }
+
+        for(int k=0; k<cnt; k++) {
+            String input = cases[k];
+            String[] split = input.split("");
+
+            // 비밀번호
+            Stack left = new Stack();
+            Stack right = new Stack();
+            StringBuilder res = new StringBuilder();
+
+            // 한글자씩 반복하여 패스워드 판단
+            for(String c : split) {
+                switch (c) {
+                    case "<" :
+                        if(!left.isEmpty()) {
+                            right.push(left.pop());
+                        }
+                        break;
+                    case ">" :
+                        if(!right.isEmpty()) {
+                            left.push(right.pop());
+                        }
+                        break;
+                    case "-" :
+                        if(!left.isEmpty())
+                            left.pop();
+                        break;
+                    default :
+                        left.push(c);
+                        break;
+                }
+            }
+
+            // 결과 출력
+            while (!left.isEmpty()) {
+                right.push(left.pop());
+            }
+            while (!right.isEmpty()) {
+                res.append(right.pop());
+            }
+            System.out.println(res.toString());
+        }
+    }
+}
+```                                                                                                                                                                                                                                                                                                                                                                               
